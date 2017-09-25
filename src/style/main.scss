@@ -1,0 +1,17 @@
+@import './reset.css';
+body {
+    background: #efefef;
+    
+    h1 { 
+        text-align: center;
+        margin: 40px 0;
+        font-size: 30px;
+    }
+    .map {
+        margin: auto;
+        width: 500px;
+        height: 300px;
+        background: black url('../images/test.jpg');
+        background-size: cover;
+    }
+}
