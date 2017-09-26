@@ -21,42 +21,54 @@ module.exports = {
     },
     module: {
         rules: [{
-            test: /.js?$/,
-            include: [
-                path.resolve(__dirname, 'src'),
-            ],
-            exclude: [
-                path.resolve(__dirname, 'node_modules'),
-                path.resolve(__dirname, 'bower_components'),
-            ],
-            loader: 'babel-loader',
-            query: {
-                presets: ['es2015'],
-            },
-        },
-        {
-            test: /\.(css|sass|scss)$/,
-            use: extractSass.extract({
-                use: [{
-                    loader: 'css-loader',
-                }, {
-                    loader: 'sass-loader',
-                }],
-                // use style-loader in development
-                fallback: 'style-loader',
-            }),
-        },
-        {
-            test: /\.(jpg|png|gif|svg)$/,
-            use: {
-                loader: 'url-loader',
-                options: {
-                    limit: 100000,
-                    name: 'images/[name].[ext]',
-                    publicPath: '../',
+                test: /.js?$/,
+                include: [
+                    path.resolve(__dirname, 'src'),
+                ],
+                exclude: [
+                    path.resolve(__dirname, 'node_modules'),
+                    path.resolve(__dirname, 'bower_components'),
+                ],
+                loader: 'babel-loader',
+                query: {
+                    presets: ['es2015'],
                 },
             },
-        }],
+            {
+                test: /\.(css|sass|scss)$/,
+                use: extractSass.extract({
+                    use: [{
+                        loader: 'css-loader',
+                    }, {
+                        loader: 'sass-loader',
+                    }],
+                    // use style-loader in development
+                    fallback: 'style-loader',
+                }),
+            },
+            {
+                test: /\.(jpg|png|gif|svg)$/,
+                use: {
+                    loader: 'url-loader',
+                    options: {
+                        limit: 100000,
+                        name: 'images/[name].[ext]',
+                        publicPath: '../',
+                    },
+                },
+            },
+            {
+                test: /\.(ttf|eot|woff2?)$/,
+                use: {
+                    loader: 'url-loader',
+                    options: {
+                        liimit: 100000,
+                        name: 'fonts/[hash].[ext]',
+                        publicPath: '../',
+                    }
+                },
+            },
+        ],
     },
     resolve: {
         extensions: ['.json', '.js', '.jsx', '.css'],

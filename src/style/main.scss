@@ -1,6 +1,13 @@
 @import './reset.css';
+@font-face {
+    font-family: 'SourceCodePro';
+    font-style: normal;
+    src: url('../fonts/SourceSansPro-Light.ttf') format('truetype');
+}
+
 body {
     background: #efefef;
+    font-family: 'SourceCodePro';
     
     h1 { 
         text-align: center;
