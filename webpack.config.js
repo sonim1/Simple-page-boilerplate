@@ -52,11 +52,7 @@ module.exports = {
             {
                 test: /\.(css|sass|scss)$/,
                 use: extractSass.extract({
-                    use: [{
-                        loader: 'css-loader',
-                    }, {
-                        loader: 'sass-loader',
-                    }],
+                    use: ['css-loader', 'sass-loader'],
                     // use style-loader in development
                     fallback: 'style-loader',
                 }),
@@ -66,7 +62,7 @@ module.exports = {
                 use: {
                     loader: 'url-loader',
                     options: {
-                        limit: 100000,
+                        limit: 10000,
                         name: 'images/[name].[ext]',
                         publicPath: '../',
                     },
@@ -77,7 +73,7 @@ module.exports = {
                 use: {
                     loader: 'url-loader',
                     options: {
-                        liimit: 100000,
+                        liimit: 10000,
                         name: 'fonts/[hash].[ext]',
                         publicPath: '../',
                     }
