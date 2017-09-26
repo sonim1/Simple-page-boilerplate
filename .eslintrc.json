@@ -1,0 +1,12 @@
+{
+    "extends": "airbnb-base",
+    "plugins": [
+        "import"
+    ],
+    "rules": {
+        "no-console": "off",
+        "no-unused-vars": 0,
+        "max-len": 0,
+        "indent": [2, 4, {"VariableDeclarator": 2}]
+    }
+}
